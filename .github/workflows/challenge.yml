@@ -1,0 +1,30 @@
+name: challenge
+
+on: push
+
+jobs:
+  job1:
+    name: First Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run echo for job1
+        run: echo Hello job1!
+  job2:
+    name: Second Job
+    runs-on: windows-latest
+    steps:
+      - name: Run echo for job2
+        run: echo Hello job2! 
+  job3:
+    name: Third Job
+    runs-on: macos-latest
+    steps:
+      - name: Run echo for job3
+        run: echo Hello job3!
+  job4:
+    name: Fourth Job
+    runs-on: macos-latest
+    needs: [job1, job2, job3]
+    steps:
+      - name: Run echo for job4
+        run: echo Hello job4!
