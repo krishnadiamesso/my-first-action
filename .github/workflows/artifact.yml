@@ -15,7 +15,7 @@ jobs:
       - name: use artifact
         uses: actions/upload-artifact@v2
         with:
-          name: $COUNTRY - $ {{ env.COUNTRY }}
+          name: $COUNTRY - ${{ env.COUNTRY }}
           path: .
       - name: Show country
         run: echo $COUNTRY
