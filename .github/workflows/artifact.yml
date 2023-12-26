@@ -12,7 +12,10 @@ jobs:
     steps:
       - name: use checkout
         uses: actions/checkout@v2
-      # - name: use artifact
-      #   uses: actions/upload-artifact@v2
+      - name: use artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: $COUNTRY - $ {{ env.COUNTRY }}
+          path: .
       - name: Show country
         run: echo $COUNTRY
