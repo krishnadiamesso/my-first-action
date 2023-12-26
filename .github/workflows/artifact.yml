@@ -1,0 +1,18 @@
+name: artifact
+
+on: push
+
+env:
+  COUNTRY: "Brazil"
+
+jobs:
+  job1:
+    name: First Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: use checkout
+        uses: actions/checkout@v2
+      - name: use artifact
+        uses: actions/upload-artifact@v2
+      - name: Show country
+        run: echo $COUNTRY
